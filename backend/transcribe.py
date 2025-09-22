@@ -2,7 +2,7 @@ import whisper
 import json
 import os
 
-# ✅ Load Whisper Model
+#  Load Whisper Model
 WHISPER_MODEL = whisper.load_model("base")
 
 def transcribe_audio(audio_path):
@@ -14,7 +14,7 @@ def transcribe_audio(audio_path):
         for segment in result.get("segments", []) for word in segment.get("words", [])
     ]
 
-    # ✅ Save output to JSON file
+    #  Save output to JSON file
     output_json_path = "processed/output.json"
     os.makedirs("processed", exist_ok=True)
     with open(output_json_path, "w", encoding="utf-8") as f:

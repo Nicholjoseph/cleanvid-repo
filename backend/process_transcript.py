@@ -3,7 +3,7 @@ import os
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-# ✅ Custom Tokenizer Function
+#  Custom Tokenizer Function
 def custom_tokenize(text):
     text = text.lower()
     for punct in ".,!?;:'\")]}-_":
@@ -12,8 +12,8 @@ def custom_tokenize(text):
         text = text.replace(punct, ' ')
     return [word for word in text.split() if word]
 
-# ✅ Load NLP Model
-MODEL_DIR = "backend/offensive_word_model-main"
+#  Load NLP Model
+MODEL_DIR = "C:/Users/91994/Desktop/cleanvid/cleanvid-repo/backend/offensive_word_model-main"
 TOKENIZER = AutoTokenizer.from_pretrained(MODEL_DIR)
 NLP_MODEL = AutoModelForSequenceClassification.from_pretrained(MODEL_DIR).to("cpu")
 
@@ -40,9 +40,11 @@ def detect_offensive_words(text, words, threshold=0.7):
                 "word": word, "start_time": start_time, "end_time": end_time, "confidence": offensive_prob
             })
 
-    # ✅ Save Output
-    output_json_path = "processed/offensive_words.json"
-    os.makedirs("processed", exist_ok=True)
+    #  Save Output
+    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))  # Move up one level
+    PROCESSED_FOLDER = os.path.join(BASE_DIR, "processed")
+    output_json_path = os.path.join(PROCESSED_FOLDER, "offensive_words.json")
+    os.makedirs(PROCESSED_FOLDER, exist_ok=True)
     with open(output_json_path, "w", encoding="utf-8") as f:
         json.dump({"censored_text": censored_text, "offensive_words": offensive_words}, f, indent=2)
 
