@@ -13,7 +13,7 @@ def custom_tokenize(text):
     return [word for word in text.split() if word]
 
 #  Load NLP Model
-MODEL_DIR = "C:/Users/91994/Desktop/cleanvid/cleanvid-repo/backend/offensive_word_model-main"
+MODEL_DIR = "Nikkzz/cleanvid-offensive-detector"
 TOKENIZER = AutoTokenizer.from_pretrained(MODEL_DIR)
 NLP_MODEL = AutoModelForSequenceClassification.from_pretrained(MODEL_DIR).to("cpu")
 
