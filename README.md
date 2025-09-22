@@ -4,7 +4,7 @@
 It consists of:
   - **Frontend**: React.js appplication for user interface.
   - **Backend**: Python Flask server for audio processing and NLP-based offensive word detection
-  - **NLP MOdel**: Pre-trained model for offensive word detection(stored in 'backend/offensive_word_model-main').
+  - **NLP MOdel**: Finetuned DistilBERT model for offensive word detection(stored in 'backend/offensive_word_model-main').
 
 
 ---
@@ -61,19 +61,8 @@ cleanvid-repo/
 ### 3.NLP Model 
 
 The project uses a finetuned Distilbert model that is finetuned to recognize offensive words with contextual awareness.
-Model is located at backend/offensive_word_model-main.
 
-Included in this repo:
- - config.json
- - tokenizer.json
- - tokenizer_config.json
- - special_tokens_map.json
-
-Not included:
- - model.safetensors
- - training_args.bin
-   
-You can download the weights later from [your hosted location] and place them in backend/offensive_word_model-main/.
+The NLP model is hosted publicly on huggingFace.No authentication is required. 
 
 ---
 
@@ -83,7 +72,7 @@ You can download the weights later from [your hosted location] and place them in
 3. Results will be displayed on the frontend interface.
  ---
 ## Notes
-
+- The first time you run the code, the model will download from Hugging Face (~268 MB). Future     runs will use the cached version.
 - Ensure uploads/ and processed/ folders exist(they are ignored in Git).
 - you may need to adjust file paths if running on a different OS
 
