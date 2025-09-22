@@ -18,26 +18,6 @@ Make sure you have the following installed:
 
 Optional:'virtualenv' for Python environment isolation
 
----
-
-## Project Structure
-
-cleanvid-repo/
-├── frontend/
-│ ├── src/
-│ ├── public/
-│ ├── package.json
-│ └── node_modules/ (ignored)
-├── backend/
-│ ├── app.py
-│ ├── audio_processing.py
-│ ├── process_transcript.py
-│ ├── transcribe.py
-│ ├── requirements.txt
-│ └── offensive_word_model-main/ (NLP model)
-├── uploads/ (ignored)
-├── processed/ (ignored)
-└── .gitignore
 
 ---
 
