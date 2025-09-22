@@ -55,5 +55,6 @@ The NLP model is hosted publicly on huggingFace.No authentication is required.
 - The first time you run the code, the model will download from Hugging Face (~268 MB). Future     runs will use the cached version.
 - Ensure uploads/ and processed/ folders exist(they are ignored in Git).
 - you may need to adjust file paths if running on a different OS
+- i have also included the training process i have done to train the model in \training folder     open in colab and follow the cells to train your own model and save it.
 
 
