@@ -68,9 +68,11 @@ Included in this repo:
  - tokenizer.json
  - tokenizer_config.json
  - special_tokens_map.json
+
 Not included:
  - model.safetensors
  - training_args.bin
+   
 You can download the weights later from [your hosted location] and place them in backend/offensive_word_model-main/.
 
 ---
